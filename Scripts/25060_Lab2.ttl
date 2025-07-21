@@ -1,0 +1,92 @@
+; ------ enter command mode ------------
+dispstr 'Configure RNBD Module Started' #$0D $0A
+send '$$$'
+dispstr #$0D $0A $0D $0A
+wait 'CMD>'
+mpause 100
+;
+; ------ set module name ------------
+dispstr 'Set module name' #$0D #$0A
+sendln 'SN,Masters2025'
+wait 'AOK'
+wait 'CMD>'
+mpause 100
+;
+; ------ set module services ------------
+dispstr 'Set module services  ' #$0D #$0A
+sendln 'SS,C0'
+wait 'AOK'
+wait 'CMD>'
+mpause 100
+;
+; ------ set module features ------------
+dispstr 'Set module features  ' #$0D #$0A
+sendln 'SR,1083'
+wait 'AOK'
+wait 'CMD>'
+mpause 100
+;
+; ------ set delimiter ------------
+dispstr 'Set delimiter  ' #$0D #$0A
+sendln 'S%,,'
+wait 'AOK'
+wait 'CMD>'
+mpause 100
+;
+; ------ set advertisment RF power------------
+dispstr 'Set advertisment RF power  '#$0D #$0A
+sendln 'SGA,E7'
+wait 'AOK'
+wait 'CMD>'
+mpause 100
+;
+; ------ set connection RF power ------------
+dispstr 'Set connection RF power  '#$0D #$0A
+sendln 'SGC,01'
+wait 'AOK'
+wait 'CMD>'
+mpause 100
+;
+; ------ set manufacturer name ------------
+dispstr 'Set manufacturer name  ' #$0D #$0A
+sendln 'SDN,Acme'
+wait 'AOK'
+wait 'CMD>'
+mpause 100
+;
+; ------ set model version ------------
+dispstr 'Set model version' #$0D #$0A
+sendln 'SDM,Vortex-2000'
+wait 'AOK'
+wait 'CMD>'
+mpause 100
+;
+; ------ set HW version ------------
+dispstr 'Set HW version'#$0D #$0A
+sendln 'SDH,Ver-2.3'
+wait 'AOK'
+wait 'CMD>'
+mpause 100
+;
+; ------ set SW version ------------
+dispstr 'Set SW version'#$0D #$0A
+sendln 'SDR,1.23'
+wait 'AOK'
+wait 'CMD>'
+mpause 100
+;
+; ------ set serial number ------------
+dispstr 'Set serial number'#$0D #$0A
+sendln 'SDS,1234'
+wait 'AOK'
+wait 'CMD>'
+mpause 100
+;
+; ------ save and reboot------------
+dispstr 'Save and reboot'#$0D #$0A
+sendln 'R,1'
+wait 'Rebooting'
+
+
+dispstr 'Configuration Complete'
+dispstr #$0D $0A

@@ -1,0 +1,36 @@
+; ------ enter command mode ------------
+dispstr 'Configure RNBD Module Started'#$0D #$0A
+send '$$$'
+wait 'CMD>'
+;
+; ------ set module name ------------
+dispstr 'Set module name' #$0D #$0A
+sendln 'SN,Franks'
+wait 'AOK'
+wait 'CMD>'
+;
+; ------ set module services ------------
+dispstr 'Set module services  ' #$0D #$0A
+sendln 'SS,C0'
+wait 'AOK'
+wait 'CMD>'
+;
+; ------ set module features ------------
+dispstr 'Set module features  ' #$0D #$0A
+sendln 'SR,1083'
+wait 'AOK'
+wait 'CMD>'
+;
+; ------ set delimiter ------------
+dispstr 'Set delimiter  ' #$0D #$0A
+sendln 'S%,,'
+wait 'AOK'
+wait 'CMD>'
+;
+; ------ save and reboot------------
+dispstr 'Save and reboot'#$0D #$0A
+sendln 'R,1'
+wait 'Rebooting'
+;
+; ------ configuration complete ----------
+dispstr 'Configuration Complete'#$0D #$0A

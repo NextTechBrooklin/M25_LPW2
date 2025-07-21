@@ -1,0 +1,49 @@
+; ------ enter command mode ------------
+dispstr 'Configure RNBD Module Started'#$0D #$0A
+; enter command mode
+send '$$$'
+wait 'CMD>'
+mpause 100
+;
+; ------ set module name ------------
+dispstr 'Set module name' #$0D #$0A
+sendln 'SN,Beacon1'
+wait 'AOK'
+wait 'CMD>'
+mpause 100
+;
+; ------ set module services ------------
+dispstr 'Set module services  ' #$0D #$0A
+sendln 'SS,C0'
+wait 'AOK'
+wait 'CMD>'
+mpause 100
+;
+; ------ set module features ------------
+dispstr 'Set module features  ' #$0D #$0A
+sendln 'SR,1083'
+wait 'AOK'
+wait 'CMD>'
+mpause 100
+;
+; ------ set advertisment to non-connectable ------------
+dispstr 'Set Advertisment to non-connectable  ' #$0D #$0A
+sendln 'SC,1'
+wait 'AOK'
+wait 'CMD>'
+mpause 100
+;
+; ------ set advertisment parameter ------------
+dispstr 'Set Advertisment Parameter ' #$0D #$0A
+sendln 'STB,00A0'
+wait 'AOK'
+wait 'CMD>'
+mpause 100
+;
+; ------ save and reboot------------
+dispstr 'Save and reboot'#$0D #$0A
+sendln 'R,1'
+wait 'Rebooting'
+;
+; ------ configuration complete ----------
+dispstr 'Configuration Complete'#$0D #$0A
